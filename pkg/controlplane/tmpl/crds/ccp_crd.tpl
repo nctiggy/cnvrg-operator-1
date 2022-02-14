@@ -38,6 +38,131 @@ spec:
               description: CnvrgClusterProvisionerSpec defines the desired state of
                 CnvrgClusterProvisioner
               properties:
+                aks:
+                  properties:
+                    availabilityZones:
+                      items:
+                        type: string
+                      type: array
+                    metadata:
+                      properties:
+                        region:
+                          type: string
+                        version:
+                          type: string
+                      type: object
+                    nodeGroups:
+                      items:
+                        properties:
+                          availabilityZones:
+                            items:
+                              type: string
+                            type: array
+                          iamAddonPolicies:
+                            properties:
+                              AWSLoadBalancerController:
+                                type: boolean
+                              XRay:
+                                type: boolean
+                              appMesh:
+                                type: boolean
+                              appMeshPreview:
+                                type: boolean
+                              autoScaler:
+                                type: boolean
+                              certManager:
+                                type: boolean
+                              cloudWatch:
+                                type: boolean
+                              ebs:
+                                type: boolean
+                              efs:
+                                type: boolean
+                              externalDNS:
+                                type: boolean
+                              fsx:
+                                type: boolean
+                              imageBuilder:
+                                type: boolean
+                            type: object
+                          iamAttachPolicyARNs:
+                            items:
+                              type: string
+                            type: array
+                          metadata:
+                            properties:
+                              autoScaling:
+                                type: boolean
+                              desiredCapacity:
+                                type: integer
+                              instanceType:
+                                type: string
+                              isGpu:
+                                type: boolean
+                              isHpu:
+                                type: boolean
+                              labels:
+                                additionalProperties:
+                                  type: string
+                                type: object
+                              maxSize:
+                                type: integer
+                              minSize:
+                                type: integer
+                              name:
+                                type: string
+                              privateNetworking:
+                                type: boolean
+                              tags:
+                                additionalProperties:
+                                  type: string
+                                type: object
+                              taints:
+                                items:
+                                  properties:
+                                    effect:
+                                      type: string
+                                    key:
+                                      type: string
+                                    value:
+                                      type: string
+                                  required:
+                                    - effect
+                                    - key
+                                    - value
+                                  type: object
+                                type: array
+                              volumeSize:
+                                type: integer
+                            type: object
+                          securityGroups:
+                            items:
+                              type: string
+                            type: array
+                          spotInstances:
+                            type: boolean
+                        type: object
+                      type: array
+                    resourceGroup:
+                      type: string
+                    resourceName:
+                      type: string
+                    vpc:
+                      properties:
+                        id:
+                          type: string
+                        privateSubnets:
+                          items:
+                            type: string
+                          type: array
+                        publicSubnets:
+                          items:
+                            type: string
+                          type: array
+                        securityGroup:
+                          type: string
+                      type: object
+                  type: object
                 aws:
                   properties:
                     availabilityZones:
