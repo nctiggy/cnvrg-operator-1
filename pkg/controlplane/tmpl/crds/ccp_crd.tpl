@@ -58,37 +58,6 @@ spec:
                             items:
                               type: string
                             type: array
-                          iamAddonPolicies:
-                            properties:
-                              AWSLoadBalancerController:
-                                type: boolean
-                              XRay:
-                                type: boolean
-                              appMesh:
-                                type: boolean
-                              appMeshPreview:
-                                type: boolean
-                              autoScaler:
-                                type: boolean
-                              certManager:
-                                type: boolean
-                              cloudWatch:
-                                type: boolean
-                              ebs:
-                                type: boolean
-                              efs:
-                                type: boolean
-                              externalDNS:
-                                type: boolean
-                              fsx:
-                                type: boolean
-                              imageBuilder:
-                                type: boolean
-                            type: object
-                          iamAttachPolicyARNs:
-                            items:
-                              type: string
-                            type: array
                           metadata:
                             properties:
                               autoScaling:
@@ -135,33 +104,12 @@ spec:
                               volumeSize:
                                 type: integer
                             type: object
-                          securityGroups:
-                            items:
-                              type: string
-                            type: array
                           spotInstances:
                             type: boolean
                         type: object
                       type: array
                     resourceGroup:
                       type: string
-                    resourceName:
-                      type: string
-                    vpc:
-                      properties:
-                        id:
-                          type: string
-                        privateSubnets:
-                          items:
-                            type: string
-                          type: array
-                        publicSubnets:
-                          items:
-                            type: string
-                          type: array
-                        securityGroup:
-                          type: string
-                      type: object
                   type: object
                 aws:
                   properties:
