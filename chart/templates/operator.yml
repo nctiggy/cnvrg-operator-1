@@ -13,12 +13,6 @@ metadata:
   name: cnvrg-operator-role
 rules:
   - apiGroups:
-      - '*'
-    resources:
-      - '*'
-    verbs:
-      - '*'
-  - apiGroups:
       - mlops.cnvrg.io
     resources:
       - cnvrgapps
