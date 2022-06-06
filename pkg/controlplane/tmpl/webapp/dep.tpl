@@ -12,6 +12,9 @@ metadata:
     app: {{ .Spec.ControlPlane.WebApp.SvcName }}
     owner: cnvrg-control-plane
     cnvrg-component: webapp
+    {{- if .Spec.Networking.EastWest.Enabled }}
+    sidecar.istio.io/inject: "true"
+    {{- end }}
     {{- range $k, $v := .Spec.Labels }}
     {{$k}}: "{{$v}}"
     {{- end }}
