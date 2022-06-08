@@ -33,6 +33,7 @@ spec:
         {{- range $k, $v := .Spec.Annotations }}
         {{$k}}: "{{$v}}"
         {{- end }}
+        traffic.sidecar.istio.io/excludeOutboundIPRanges: "10.0.0.0/8"
       labels:
         {{- if .Spec.Networking.EastWest.Enabled }}
         sidecar.istio.io/inject: "true"
