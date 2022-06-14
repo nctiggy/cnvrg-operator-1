@@ -25,5 +25,5 @@ spec:
       nodePort: {{ .Spec.Monitoring.Prometheus.NodePort }}
       {{- end }}
   selector:
-    app: prometheus
+    app: {{ .Spec.Monitoring.Prometheus.SvcName }}
 
