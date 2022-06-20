@@ -29,6 +29,7 @@ spec:
       label:
         istio: cnvrg-eastwestgateway
         app: cnvrg-eastwestgateway
+        gi
         topology.istio.io/network: {{ .Spec.Networking.Istio.EastWest.Network }}
         {{- range $k, $v := .Spec.Labels }}
         {{$k}}: "{{$v}}"
