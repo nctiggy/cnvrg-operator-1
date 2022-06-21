@@ -197,7 +197,8 @@ networking:
       network: "network1"
       meshId: "mesh1"
       remoteClusters:
-        "clusterName": "example1"
+        - "dell"
+        - "trex"
 sso:
   enabled: false
   adminUser: ""
