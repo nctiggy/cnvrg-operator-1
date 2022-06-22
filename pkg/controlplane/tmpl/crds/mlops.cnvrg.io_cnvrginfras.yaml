@@ -427,6 +427,12 @@ spec:
                           items:
                             type: string
                           type: array
+                      required:
+                      - clusterName
+                      - enabled
+                      - meshId
+                      - network
+                      - primary
                       type: object
                     enabled:
                       type: boolean
