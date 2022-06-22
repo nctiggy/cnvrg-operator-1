@@ -25,11 +25,11 @@ type Istio struct {
 }
 
 type EastWest struct {
-	Enabled        bool     `json:"enabled,omitempty"`
-	ClusterName    string   `json:"clusterName,omitempty"`
-	Network        string   `json:"network,omitempty"`
-	MeshId         string   `json:"meshId,omitempty"`
-	Primary        bool     `json:"primary,omitempty"`
+	Enabled        bool     `json:"enabled"`
+	ClusterName    string   `json:"clusterName"`
+	Network        string   `json:"network"`
+	MeshId         string   `json:"meshId"`
+	Primary        bool     `json:"primary"`
 	RemoteClusters []string `json:"remoteClusters,omitempty"`
 }
 
