@@ -112,6 +112,21 @@ spec:
         {{- end }}
   values:
     global:
+      {{- if (gt (len .Values.remoteClusters) 0) }}
+      meshNetworks:
+      {{- range $cluster, $ips := .Values.remoteClusters }}
+      {{- if (gt (len $ips) 0) }}
+        {{$cluster}}:
+          endpoints:
+            - fromRegistry: {{$cluster}}
+          gateways:
+        {{- range $ips }}
+            - address: {{ . }}
+              port: 15443
+        {{- end }}
+      {{- end }}
+      {{- end }}
+      {{- end }}
       istioNamespace:  {{ ns . }}
       imagePullSecrets:
         - {{ .Spec.Registry.Name }}
